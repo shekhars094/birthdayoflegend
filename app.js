@@ -22,6 +22,9 @@ mongoose
 	})
 	.then(() => {
 		console.log("Database is connected");
+	})
+	.catch(err => {
+		console.log(error);
 	});
 
 app.use(express.static(publicPath));
