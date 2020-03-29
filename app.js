@@ -11,7 +11,7 @@ const app = express();
 const publicPath = path.join(__dirname, "public");
 const templatePath = path.join(__dirname, "views");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 // Database Connection
 
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("views", templatePath);
 app.set("view engine", "ejs");
 
-app.use("", birthday);
+app.use("/", birthday);
 
 app.listen(port, () => {
 	console.log("App is running on ", port);
