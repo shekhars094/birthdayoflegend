@@ -1,82 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-			crossorigin="anonymous"
-		/>
-		<title>Document</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="jumbotron bg-success">
-						<h1 class="display-4 text-center">Birthday Date</h1>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<form action="/" method="POST">
-						<div class="form-group">
-							<label for="namefield">Name</label>
-							<input
-								type="text"
-								class="form-control"
-								id="namefield"
-								aria-describedby="emailHelp"
-								name="name"
-							/>
-						</div>
-						<div class="form-group">
-							<label for="namefield">Name</label>
-							<input
-								type="date"
-								class="form-control"
-								id="namefield"
-								aria-describedby="emailHelp"
-								name="DOB"
-							/>
-						</div>
-						<button type="submit" class="btn btn-primary">
-							Submit
-						</button>
-					</form>
-				</div>
-			</div>
 
-			<div class="row">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <title>Document</title>
+</head>
 
-					<% for(var i=0; i<dobs.length; i++) {%>
-							<div class="col-4">
-								<%= dobs[i].name %>
-							</div>
-							<div class="col-4">
-								<%= dobs[i].DOB %>
-							</div>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="jumbotron bg-success">
+          <h1 class="display-4 text-center">Birthday Date</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form action="/" method="POST">
+          <div class="form-group">
+            <label for="namefield">Name</label>
+            <input type="text" class="form-control" id="namefield" aria-describedby="emailHelp" name="name" />
+          </div>
+          <div class="form-group">
+            <label for="namefield">DOB</label>
+            <input type="date" class="form-control" id="namefield" aria-describedby="emailHelp" name="DOB" />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
 
-							<div class="col-4">
-								<form
-                        action="/delete/<%= dobs[i]._id %>"
-                        method="POST"
-                        class="d-inline"
-                    >
-                        <button class="btn btn-danger" type="submit">
-                            Delete
-                        </button>
-                    </form>
-							</div>
+    <div class="row">
+
+      <% for(var i=0; i < dobs.length; i++) { %>
+      <div class="col-4">
+        <%= dobs[i].name %>
+      </div>
+      <div class="col-4">
+        <%= dobs[i].DOB %>
+      </div>
+
+      <div class="col-4">
+        <form action="/delete/<%= dobs[i]._id %>" method="POST" class="d-inline">
+          <button class="btn btn-danger" type="submit">
+            Delete
+          </button>
+        </form>
+      </div>
 
 
 
-					<% } %>
-				</div>
-			</div>
-		</div>
-	</body>
+      <% } %>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>
