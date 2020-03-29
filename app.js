@@ -15,14 +15,14 @@ const port = process.env.PORT || 3000;
 
 // Database Connection
 
-// mongoose
-// 	.connect("mongodb://localhost:27017/birthday" || process.env.MONGODB_URI, {
-// 		useNewUrlParser: true,
-// 		useUnifiedTopology: true
-// 	})
-// 	.then(() => {
-// 		console.log("Database is connected");
-// 	});
+mongoose
+	.connect("mongodb://localhost:27017/birthday" || process.env.MONGODB_URI, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	})
+	.then(() => {
+		console.log("Database is connected");
+	});
 
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
