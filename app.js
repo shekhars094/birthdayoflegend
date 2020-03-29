@@ -16,7 +16,7 @@ const port = process.env.PORT || 3002;
 // Database Connection
 
 mongoose.connect(
-	"mongodb://localhost:27017/birthday" || process.env.MONGODB_URI,
+	process.env.MONGODB_URI || "mongodb://localhost:27017/birthday",
 	{
 		useNewUrlParser: true,
 		useUnifiedTopology: true
