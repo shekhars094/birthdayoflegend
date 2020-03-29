@@ -8,9 +8,7 @@ router.get("", (req, res) => {
 			console.log(typeof dobs);
 			res.render("index", { dobs: dobs });
 		})
-		.catch(err => {
-			res.render("index", {});
-		});
+		.catch(err => {});
 });
 
 router.post("", (req, res) => {
